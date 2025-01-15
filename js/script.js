@@ -1,41 +1,53 @@
-// Menunggu hingga halaman sepenuhnya dimuat
-document.addEventListener("DOMContentLoaded", function () {
-    // Mendapatkan elemen form dan tombol kirim
-    const contactForm = document.querySelector(".contact-form");
-    const submitButton = contactForm.querySelector("button[type='submit']");
+let indexBanner = 0;
 
-    // Menangani pengiriman formulir
-    contactForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Mencegah form untuk submit secara default (tanpa refresh halaman)
+changeBackground();
 
-        // Mengambil data input dari form
-        const name = contactForm.querySelector('input[type="text"]').value;
-        const email = contactForm.querySelector('input[type="email"]').value;
-        const message = contactForm.querySelector('textarea').value;
+function nextBanner() {
+    indexBanner += 1;
+    changeBackground();
 
-        // Validasi input (jika kosong, tampilkan peringatan)
-        if (name === "" || email === "" || message === "") {
-            alert("Please fill in all fields.");
-            return;
-        }
+}
 
-        // Simulasi pengiriman pesan dengan delay (misalnya mengirim data ke server)
-        setTimeout(() => {
-            // Setelah form berhasil "dikirim", tampilkan pesan konfirmasi
-            alert(`Thank you, ${name}! Your message has been sent successfully.`);
+// Fungsi mengganti banner/banner auto slide
+function changeBackground() {
+    let bannerlist = document.getElementsByClassName('banner-image');
+    console.log(bannerlist);
+    console.log(indexBanner);
 
-            // Setelah pengiriman berhasil, reset form
-            contactForm.reset();
-        }, 1000); // Simulasi delay 1 detik sebelum konfirmasi
+    if (indexBanner > bannerlist.length - 1) {
+        //reset index
+        indexBanner = 0;
+    }
+    //looping ganti background
+    for (let i = 0; i < bannerlist.length; i++) {
+        bannerlist[i].style.display = 'none';
+    }
 
-        // Menonaktifkan tombol kirim sementara selama pengiriman
-        submitButton.disabled = true;
-        submitButton.innerHTML = "Sending...";
+    bannerlist[indexBanner].style.display = 'block';
+}
 
-        // Setelah delay selesai, aktifkan kembali tombol kirim
-        setTimeout(() => {
-            submitButton.disabled = false;
-            submitButton.innerHTML = "Send Message";
-        }, 2000); // Menunggu 2 detik sebelum mengaktifkan kembali tombol kirim
-    });
+setInterval(nextBanner, 5000);
+
+// Form validation
+// Menambahkan event listener untuk form submit
+document.querySelector('.contact-form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Mencegah pengiriman form standar
+
+    // Mengambil nilai dari input form
+    const name = document.querySelector('input[placeholder="Your Name"]').value;
+    const email = document.querySelector('input[placeholder="Your Email"]').value;
+    const phone = document.querySelector('input[placeholder="Your Phone Number"]').value;
+    const message = document.querySelector('textarea[placeholder="Your Message"]').value;
+
+    // Nomor WhatsApp tujuan (ganti dengan nomor Anda, gunakan format internasional tanpa tanda '+' atau spasi)
+    const whatsappNumber = '6287789642527';
+
+    // Membuat URL WhatsApp dengan parameter
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+        `Hello, my name is ${name}.\n\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
+    )}`;
+
+    // Membuka URL WhatsApp
+    window.open(whatsappURL, '_blank');
 });
+
