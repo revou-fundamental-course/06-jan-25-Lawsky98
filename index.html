@@ -1,64 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Menetapkan karakter set untuk dokumen HTML -->
     <meta charset="UTF-8">
-
-    <!-- Menetapkan viewport agar halaman responsif di perangkat mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-
-    <!-- Menautkan file CSS eksternal untuk styling halaman -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Bagian header dengan class 'hero' yang berisi navigasi dan konten hero -->
+    <!-- Halaman Beranda (Home) -->
     <header class="hero">
         <nav class="navbar">
-
-            <!-- Logo pada navbar -->
-            <div class="logo"><img src="img/iky.png" alt="Logo"></div>
-            
-            <!-- Menu navigasi -->
+            <div class="logo"><img src="img/ad.jpeg" alt="Logo"></div>
             <ul class="nav-links">
                 <li><a href="#about" class="active">About</a></li>
-                <li><a href="#services" class="active">Services</a></li>
                 <li><a href="#portfolio" class="active">Portfolio</a></li>
+                <li><a href="#services" class="active">Services</a></li>
                 <li><a href="#contact" class="active">Contact</a></li>
+                
             </ul>
         </nav>
-        
-        <!-- Konten hero yang berisi judul dan deskripsi singkat -->
+
         <div class="hero-content">
             <h1>Welcome to My Portfolio</h1>
-            <p>We create innovative solutions for you</p>
+            <p>Hi, I'm Moh Rizky Ramadhan. A passionate Software Engineer & Web Developer.</p>
+            <p>Explore my journey, projects, and more.</p>
         </div>
+
+        <div class="banner-image banner-image-1"></div>
+        <div class="banner-image banner-image-2"></div>
+        <div class="banner-image banner-image-3"></div>
     </header>
 
-    <!-- Bagian tentang saya -->
+    <!-- Tentang Saya (About Me) -->
     <section id="about" class="about-section">
-        <h2>About</h2>
-        <p>"Hai, saya Moh Rizky Ramadhan! Saya seorang Software Engginer & Web Development yang bersemangat tentang Ilmu Teknologi. Melalui platform ini, saya ingin berbagi pengetahuan, pengalaman, dan inspirasi dengan Anda. Saya percaya bahwa setiap langkah kecil membawa perubahan besar, dan saya berkomitmen untuk terus belajar dan berkembang. Terima kasih telah mengunjungi, dan saya berharap dapat berbagi perjalanan ini bersama Anda!</p>
+        <h2>About Me</h2>
+        <p>Hi, I am Moh Rizky Ramadhan! I am a Software Engineer & Web Developer passionate about Technology. Through this platform, I aim to share knowledge, experiences, and inspiration with you. I believe that every small step leads to a great change, and I am committed to continuous learning and growth. Thank you for visiting, and I hope we can share this journey together!</p>
+        <h3>Education & Experience</h3>
+        <ul>
+            <p>Bachelor's in Computer Science
+            <br>    
+            <p>5+ years of experience in software development
+            <br>
+            <p>Specialized in Full Stack Web Development and Mobile App Development</p>
+        </ul>
+        <h3>Skills</h3>
+        <ul>
+            <p>HTML, CSS, JavaScript</p>
+            <p>React, Node.js, Express</p>
+            <p>Mobile App Development (React Native)</p>
+            <p>UI/UX Design</p>
+        </ul>
     </section>
 
-    <!-- Bagian layanan yang ditawarkan -->
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio-section">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+            <img src="img/1.jpg" alt="Project 1">
+            <img src="img/2.jpg" alt="Project 2">
+            <img src="img/3.jpeg" alt="Project 3">
+            <img src="img/4.jpg" alt="Project 4">
+        </div>
+    </section>
+
+    <!-- Layanan (Services) -->
     <section id="services" class="services-section">
-        <h2>Services</h2>
+        <h2>Our Services</h2>
         <div class="service-container">
-            
-            <!-- layanan pertama -->
             <div class="service-card">
                 <h3>Web Development</h3>
                 <p>Building responsive and modern websites for your business.</p>
             </div>
-            
-            <!-- layanan kedua -->
             <div class="service-card">
                 <h3>Mobile Apps</h3>
                 <p>Creating user-friendly mobile applications for iOS and Android.</p>
             </div>
-            
-            <!-- layanan ketiga -->
             <div class="service-card">
                 <h3>Digital Marketing</h3>
                 <p>Helping you grow your online presence and reach your target audience.</p>
@@ -66,26 +82,6 @@
         </div>
     </section>
 
-    <!-- Bagian portfolio yang menampilkan proyek-proyek -->
-    <section id="portfolio" class="portfolio-section">
-        <h2>Portfolio</h2>
-        <div class="portfolio-grid">
-            
-            <!-- Gambar proyek pertama -->
-            <img src="img/1.jpg" alt="Project 1">
-
-            <!-- Gambar proyek kedua -->
-            <img src="img/2.jpg" alt="Project 2">
-            
-            <!-- Gambar proyek ketiga -->
-            <img src="img/3.jpeg" alt="Project 3">
-            
-            <!-- Gambar proyek keempat -->
-            <img src="img/4.jpg" alt="Project 4">
-        </div>
-    </section>
-
-    <!-- Bagian kontak untuk mengirim pesan -->
     <section id="contact" class="contact-section">
         <h2>Contact Me</h2>
         <form action="#" class="contact-form">
@@ -96,6 +92,9 @@
             <!-- Input email pengirim pesan -->
             <input type="email" placeholder="Your Email" required>
             
+            <!-- Input nomor telepon pengirim pesan -->
+            <input type="number" placeholder="Your Phone Number" required>
+            
             <!-- Textarea untuk menulis pesan -->
             <textarea placeholder="Your Message" required></textarea>
             
@@ -103,13 +102,13 @@
             <button type="submit" class="btn">Send Message</button>
         </form>
     </section>
+    
 
-    <!-- Footer untuk menampilkan hak cipta -->
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 LawskyPortfolio. All rights reserved.</p>
+        <p>&copy; 2025 MohRizkyRamadhan-Portfolio. All rights reserved.</p>
     </footer>
 
-    <!-- Menyertakan file JavaScript eksternal untuk interaktivitas -->
     <script src="js/script.js"></script>
 </body>
 </html>
